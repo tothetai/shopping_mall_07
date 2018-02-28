@@ -1,0 +1,20 @@
+<?php
+	return[
+		"login"=>[
+			"login"=>"Login",
+			"email"=>"Email",
+			"password"=>"Password",
+			"submit"=>"Login",
+		],
+
+		"index"=>[
+			"logout"=>"LogOut",
+			"home"=>"Home",
+			"product"=>"Product",
+			"category"=>"Categoty",
+			"comment"=>"Comment",
+			"user"=>"Users",
+			"calendar"=>"Calendar",
+		],	
+	];
+?>
