@@ -8,7 +8,7 @@ use App\Models\Category;
 
 class SubCategory extends Model
 {
-   protected $table = 'subcategory';
+   protected $table = 'sub_category';
 
    public function Category()
    {

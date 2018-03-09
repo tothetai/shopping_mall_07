@@ -54,5 +54,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'CheckLogedIn' => \App\Http\Middleware\CheckLogedIn::class,
         'CheckLogedOut' => \App\Http\Middleware\CheckLogedOut::class,
+        'locale' => \App\Http\Middleware\Locale::class,
     ];
 }

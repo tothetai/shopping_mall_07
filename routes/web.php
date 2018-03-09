@@ -29,3 +29,8 @@ Route::group(['namespace'=>'Admin'],function(){
 		});
 	});
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('homepage', 'FrontController@homepage');
+Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
+
