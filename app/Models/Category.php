@@ -8,10 +8,10 @@ use App\Models\SubCategory;
 
 class Category extends Model
 {
-   protected $table = 'category';
+   protected $table = 'categories';
     
    public function subCat()
    {
-      return $this->hasMany(SubCategory::class);
+      return $this->hasMany(SubCategory::class, 'cat_id', 'id');
    }
 }

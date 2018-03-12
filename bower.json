@@ -1,0 +1,17 @@
+{
+  "name": "shopping_mall_07",
+  "description": "",
+  "main": "",
+  "authors": [
+    "hoaibao <nguyenthihoaibn96@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/HoaiBaobn/shopping_mall_07",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
