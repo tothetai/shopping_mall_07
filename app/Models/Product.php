@@ -10,7 +10,9 @@ use App\Models\Size;
 
 class Product extends Model
 {
-   protected $table = 'product';
+   protected $table = 'products';
+   protected $primaryKey = 'pro_id';
+   protected $guarded =[];
 
    public function billDetail()
    {

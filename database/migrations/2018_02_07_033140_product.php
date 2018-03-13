@@ -14,15 +14,20 @@ class Product extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('sub_id')->unsigned();
+            $table->increments('pro_id');
+            $table->integer('subs_id')->unsigned();
             $table->string('name');
+            $table->string('pro_slug');
             $table->tinyInteger('new');
             $table->string('description');
             $table->integer('quantity');
+            $table->string('condition');
+            $table->string('promotion');
+            $table->tinyInteger('status');
+            $table->tinyInteger('featured');
             $table->integer('price');
-            $table->integer('discount');
-            $table->text('img');
+            $table->string('discount');
+            $table->string('img');
             $table->timestamps();
         });
     }

@@ -11,15 +11,23 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-lg-5">
 				<div class="panel panel-primary">
+					@include('errors.note')
 					<div class="panel-heading">
 						Thêm danh mục
 					</div>
 					<div class="panel-body">
-						<div class="form-group">
-							<label>Tên danh mục:</label>
-							<input type="text" name="name" class="form-control" placeholder="Tên danh mục...">
-						</div>
+						<form action="" method="post" role="form">
+							<div class="form-group">
+								<label>Tên danh mục:</label>
+								<input required type="text" name="name" class="form-control" placeholder="Tên danh mục...">
+							</div>
+							<div class ="form-group">
+								<input type="submit" name="submit" class="form-control btn btn-primary" value="Thêm mới">
+							</div>
+							{!! csrf_field() !!}
+						</form>	
 					</div>
+					
 				</div>
 		</div>
 		<div class="col-xs-12 col-md-7 col-lg-7">
@@ -35,55 +43,15 @@
 				                </tr>
 			              	</thead>
 			              	<tbody>
+			              	@foreach($catelist as $cate)	
 							<tr>
-								<td>...</td>
+								<td>{{$cate->cat_name}}</td>
 								<td>
-		                    		<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</a>
-		                    		<a href="#" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
+		                    		<a href="{{asset('admin/category/edit/'.$cate->cate_id)}}" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</a>
+		                    		<a href="{{asset('admin/category/delete/'.$cate->cate_id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
 		                  		</td>
 		                  	</tr>
-		                  	<tr>
-								<td>...</td>
-								<td>
-		                    		<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</a>
-		                    		<a href="#" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
-		                  		</td>
-		                  	</tr> 
-		                  	<tr>
-								<td>...</td>
-								<td>
-		                    		<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</a>
-		                    		<a href="#" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
-		                  		</td>
-		                  	</tr> 
-		                  	<tr>
-								<td>...</td>
-								<td>
-		                    		<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</a>
-		                    		<a href="#" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
-		                  		</td>
-		                  	</tr>
-		                  	<tr>
-								<td>...</td>
-								<td>
-		                    		<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</a>
-		                    		<a href="#" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
-		                  		</td>
-		                  	</tr>
-		                  	<tr>
-								<td>...</td>
-								<td>
-		                    		<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</a>
-		                    		<a href="#" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
-		                  		</td>
-		                  	</tr>
-		                  	<tr>
-								<td>...</td>
-								<td>
-		                    		<a href="#" class="btn btn-warning"><span class="glyphicon glyphicon-edit"></span> Sửa</a>
-		                    		<a href="#" onclick="return confirm('Bạn có chắc chắn muốn xóa?')" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Xóa</a>
-		                  		</td>
-		                  	</tr> 
+		                  	@endforeach()
 			                </tbody>
 			            </table>
 					</div>

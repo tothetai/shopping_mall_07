@@ -16,7 +16,7 @@
 					<svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>
 				</div>
 				<div class="col-sm-9 col-lg-7 widget-right">
-					<div class="large">120</div>
+					<div class="large">{{ count(DB::table('products')->get()) }}</div>
 					<div class="text-muted">{{trans('index.index.product')}}</div>
 				</div>
 			</div>
@@ -42,7 +42,7 @@
 					<svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>
 				</div>
 				<div class="col-sm-9 col-lg-7 widget-right">
-					<div class="large">24</div>
+					<div class="large">{{ count(DB::table('user_table')->get()) }}</div>
 					<div class="text-muted">{{trans('index.index.user')}}</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 					<svg class="glyph stroked app-window-with-content"><use xlink:href="#stroked-app-window-with-content"></use></svg>
 				</div>
 				<div class="col-sm-9 col-lg-7 widget-right">
-					<div class="large">25.2k</div>
+					<div class="large">{{ count(DB::table('categories')->get()) }}</div>
 					<div class="text-muted">{{trans('index.index.category')}}</div>
 				</div>
 			</div>
