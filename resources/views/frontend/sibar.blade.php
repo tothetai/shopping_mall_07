@@ -5,8 +5,7 @@
         </div>
     </div>
     <div class="block-content">
-        @foreach($cat as $ca)
-          
+        @foreach($data['category'] as $ca)
                 <li class="level0 parent drop-menu ">
                     <a href="/thoi-trang-nu">
                         <i class="fa fa-caret-right" aria-hidden="true"></i>
@@ -50,10 +49,10 @@
         <div class="block-content" id="scro" style="overflow: hidden; width: 270px; height: 90px;">
             <div class="owl_hot_sale slide owl-carousel owl-theme">
                 <div class="item cat-slide-item"> 
-                    @foreach($pro_news as $pronew)
+                    @foreach($data['slide'] as $pronew)
                     <div class="item item_pd">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 item-img">
-                            <a href="/trangchu/<?=$pronew->pro_id;?>"><img src="{{url('assets/uploads').'/'.$pronew->img}}"  width="81" height="81" alt="Sản phẩm demo"></a>
+                            <a href="route('productDetail', $pronew->id>"><img src="{{url('assets/uploads').'/'.$pronew->img}}"  width="81" height="81" alt="Sản phẩm demo"></a>
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7 item-info">
                             <p class="item-name"><a href="/san-pham-demo-19">{{ $pronew->name }}</a></p>

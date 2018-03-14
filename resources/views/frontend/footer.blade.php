@@ -71,9 +71,9 @@
         </div>
     </div>
 </section>
-<script src="assets/js/jquery.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
+    {!! Html::script('assets/js/jquery.js') !!}
+    {!! Html::script('assets/js/bootstrap.min.js') !!}
+    {!! Html::script('assets/js/owl.carousel.min.js') !!}
+    {!! Html::script('js/script.js') !!}
 </body>
 </html>

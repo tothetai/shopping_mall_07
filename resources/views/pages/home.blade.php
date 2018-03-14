@@ -36,11 +36,11 @@
                     </p>
                     <div class="item">
                         <div class="row noboder">
-                            @foreach($pro_news as $pron)
+                            @foreach($data['slide'] as $pron)
                             <div class="col-sm-3">
                                 <div class="single-item">
                                     <div class="single-item-header">
-                                        <a href="product.html"><img src="{{ url('assets/uploads').'/'.$pron->img }}" alt=""></a>
+                                        <a href="{{route('productDetail', $pron->id)}}"><img src="{{ url('assets/uploads').'/'.$pron->img }}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{ $pron->name }}</p>
@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="#">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('productDetail', $pron->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -77,7 +77,7 @@
                             <div class="col-sm-3">
                                 <div class="single-item">
                                     <div class="single-item-header">
-                                        <a href="product.html"><img src="{{ url('assets/uploads').'/'.$prodis->img }}" alt=""></a>
+                                        <a href="{{route('productDetail', $prodis->id)}}"><img src="{{ url('assets/uploads').'/'.$prodis->img }}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{ $prodis->name }}</p>
@@ -88,7 +88,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="#">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('productDetail', $prodis->id)}}">Details <i class="fa fa-chevron-right"></i></a>:
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -110,7 +110,7 @@
                             <div class="col-sm-3">
                                 <div class="single-item">
                                     <div class="single-item-header">
-                                        <a href="product.html"><img src="{{ url('assets/uploads').'/'.$proi->img }}" alt=""></a>
+                                        <a href="{{route('productDetail', $proi->id)}}"><img src="{{ url('assets/uploads').'/'.$proi->img }}" alt=""></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{ $proi->name }}</p>
@@ -126,7 +126,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="#">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('productDetail', $proi->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -138,5 +138,6 @@
             </div>
         </div>  
     </div>
+</div>
 @endsection
-    
+
