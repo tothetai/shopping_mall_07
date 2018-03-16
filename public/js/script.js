@@ -4,10 +4,13 @@ jQuery(document).ready(function() {
 
         if(vitrihientai > 33) {
             $('.border-ftw').addClass('sticky');
+            $("#cart-menu-li").css({display:"block"});
         }
         else {
             $('.border-ftw').removeClass('sticky');
+            $("#cart-menu-li").css({display:"none"});
         }
+
     });
   
     jQuery('.cat-slide.owl-carousel').owlCarousel( {
@@ -265,7 +268,9 @@ jQuery(document).ready(function() {
         }
     });
 
-    $("#menu-m > p").click(function(event) {
-        $("#m-menu").slideToggle();
-    });
+    $("#dropdown").click(function(event) {
+        $("#menu").slideToggle();
+
+   });
+
 });

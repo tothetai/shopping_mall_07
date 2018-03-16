@@ -5,7 +5,9 @@
             'email' => 'E-mail',
             'password' => 'Mật Khẩu',
             'submit' => 'Đăng nhập',
-        ]
+            'name' => 'Họ Và Tên',
+        ],
+
         'index' => [
             'logout' => 'Đăng xuất',
             'home' => 'Trang chủ',
@@ -15,11 +17,23 @@
             'user' => 'Người dùng',
             'calendar' => 'Lịch',
         ],
+
         'header' => [
             'welcome' => 'Chào mừng bạn đến với  TITIKAKASHOP',
             'copyright' => 'Bản quyền thuộc về Ambition',
         ],
+
         'homepage' => [
+            'productall' => 'Tất Cả Sản Phẩm',
+            'productsame' => 'Sản Phẩm Tương Tự',
+            'submit' => 'Gửi',
+            'info' => 'THÔNG TIN CÁ NHÂN',
+            'content' => 'Đăng ký tài khoản ngay để có thể mua hàng nhanh chóng và dễ dàng hơn ! Ngoài ra còn có rất  nhiều chính sách và ưu đãi cho các thành viên',
+            'noAcount' =>'BẠN CHƯA CÓ TÀI KHOẢN',
+            'introduce' => 'Giới Thiệu',
+            'contact' => 'Liên Hệ',
+            'search'=> 'Tìm Kiếm',
+            'order' => 'Đơn Hàng Mới',
             'introduce' => 'Giới thiệu',
             'contact' => 'Liên hệ',
             'introduct' => 'Giới thiệu', 
@@ -49,6 +63,7 @@
             'discount' => 'Có nhiều sản phẩm giảm giá',
             'shopnow' => 'Mua ngay',
             'latestproduct' => 'Sản Phẩm Mới Nhất',
+            'discountproduct' => 'Sản Phẩm Khuyến Mại',
             'discountproduct' => 'Sản Phẩm Giảm Giá',
             'mostbuyproduct' => 'Sản Phẩm Bán Chạy',
             'view' => 'Hiển Thị',
@@ -69,8 +84,8 @@
             'submit' => 'Gửi',
             'price' => 'Giá',
             'page' => 'Trang : ',
-            'care' => 'Có thể bạn quan tâm',
-            'help' => 'Hỗ trực trực tuyến',
+            'care' => 'Có Thể Bạn Quan Tâm',
+            'help' => 'Hỗ Trợ Trực Tuyến',
             'support' => 'Tư vấn bán hàng',
             'phone' => 'Điện thoại:0971885136',
             'company' => ' Thông tin công ty',
