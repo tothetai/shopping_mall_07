@@ -75,7 +75,7 @@
 									<label>Danh mục con</label>
 									<select required name="subcate" class="form-control">
 										@foreach($subcatelist as $subcate)
-										<option value="{{$subcate->sub_id}}">{{$subcate->sub_name}}</option>
+										<option value="{{$subcate->id}}">{{$subcate->sub_name}}</option>
 										@endforeach
 				                    </select>
 								</div>

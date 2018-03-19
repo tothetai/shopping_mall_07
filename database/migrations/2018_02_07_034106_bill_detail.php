@@ -16,7 +16,7 @@ class BillDetail extends Migration
         Schema::create('bill_detail', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('bill_id')->unsigned();
-            $table->integer('pros_id')->unsigned();
+            $table->integer('pro_id')->unsigned();
             $table->float('price');
             $table->integer('quantity');
             $table->timestamps();     

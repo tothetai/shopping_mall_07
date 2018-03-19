@@ -5,7 +5,11 @@
             'email' => 'E-mail',
             'password' => 'Mật Khẩu',
             'submit' => 'Đăng nhập',
+<<<<<<< HEAD
         ]
+=======
+        ],
+>>>>>>> Category Subcategory Product
         'index' => [
             'logout' => 'Đăng xuất',
             'home' => 'Trang chủ',

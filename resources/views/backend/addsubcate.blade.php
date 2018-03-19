@@ -26,7 +26,7 @@
 									<label>Danh mục</label>
 									<select required name="cate" class="form-control">
 										@foreach($catelist as $cate)
-										<option value="{{$cate->cate_id}}">{{$cate->cat_name}}</option>
+										<option value="{{$cate->id}}">{{$cate->cat_name}}</option>
 										@endforeach
 				                    </select>
 								</div>

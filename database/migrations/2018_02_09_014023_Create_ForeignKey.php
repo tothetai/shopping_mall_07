@@ -15,25 +15,25 @@ class CreateForeignKey extends Migration
     {
         //
         Schema::table('sub_category', function ($table) {
-            $table->foreign('cat_id')->references('cate_id')->on('categories');
+            $table->foreign('cat_id')->references('id')->on('categories');
         });
         Schema::table('products', function ($table) {
-            $table->foreign('subs_id')->references('sub_id')->on('sub_category');
+            $table->foreign('sub_id')->references('id')->on('sub_category');
         });
         Schema::table('bill_detail', function ($table) {
-            $table->foreign('pros_id')->references('pro_id')->on('products');
+            $table->foreign('pro_id')->references('id')->on('products');
         });
          Schema::table('bill_detail', function ($table) {
             $table->foreign('bill_id')->references('id')->on('bill');
         });
         Schema::table('comments', function ($table) {
-            $table->foreign('prod_id')->references('pro_id')->on('products');    
+            $table->foreign('prod_id')->references('id')->on('products');    
         });
         Schema::table('comments', function ($table) {
             $table->foreign('user_id_comment')->references('id')->on('user_table');
         });
          Schema::table('size', function ($table) {
-            $table->foreign('product_id')->references('pro_id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products');
         });
         Schema::table('bill', function ($table) {
             $table->foreign('user_id_bill')->references('id')->on('user_table');

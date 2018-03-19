@@ -42,8 +42,13 @@
 								<div class="form-group" >
 									<label>Trạng thái</label>
 									<select required name="status" class="form-control">
+<<<<<<< HEAD
 										<option value="1" @if($product->status==1) checked @endif>Còn hàng</option>
 										<option value="0" @if($product->status==0) checked @endif>Hết hàng</option>
+=======
+										<option value="1" @if($product->status==1) selected @endif>Còn hàng</option>
+										<option value="0" @if($product->status==0) selected @endif>Hết hàng</option>
+>>>>>>> Category Subcategory Product
 				                    </select>
 								</div>
 								<div class="form-group" >
@@ -63,7 +68,7 @@
 									<label>Danh mục con</label>
 									<select required name="subcate" class="form-control">
 										@foreach($sublistcate as $subcate)
-										<option value="{{$subcate->sub_id}}" @if($product->subs_id == $subcate->sub_id) selected @endif>{{$subcate->sub_name}}</option>
+										<option value="{{$subcate->id}}" @if($product->sub_id == $subcate->id) selected @endif>{{$subcate->sub_name}}</option>
 										@endforeach
 				                    </select>
 								</div>

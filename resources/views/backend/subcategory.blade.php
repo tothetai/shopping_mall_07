@@ -32,13 +32,12 @@
 								<tbody>
 									@foreach($subcatelist as $subcate)
 									<tr>
-										
-										<td>{{$subcate -> sub_id}}</td>
+										<td>{{$subcate -> id}}</td>
 										<td>{{$subcate -> sub_name}}</td>
 										<td>{{$subcate -> cat_name}}</td>
 										<td>
-											<a href="{{asset('admin/subcategory/edit/'.$subcate->sub_id)}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-											<a onclick ="return confirm('Bạn có chắc chắn muốn xóa!')" href="{{asset('admin/subcategory/delete/'.$subcate->sub_id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+											<a href="{{asset('admin/subcategory/edit/'.$subcate->id)}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+											<a onclick ="return confirm('Bạn có chắc chắn muốn xóa!')" href="{{asset('admin/subcategory/delete/'.$subcate->id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
 										</td>
 									</tr>
 									@endforeach

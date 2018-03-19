@@ -4,7 +4,11 @@
 <base href="{{asset('/')}}/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
 <title>@yield('title')| LyLy Shop</title>
+=======
+<title>@yield('title')|Admin</title>
+>>>>>>> Category Subcategory Product
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
@@ -35,9 +39,7 @@
 			<li class="active"><a href="{{asset('admin/home')}}"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg>{{trans('index.index.home')}}</a></li>
 			<li><a href="{{asset('admin/product')}}"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg>{{trans('index.index.product')}}</a></li>
 			<li><a href="{{asset('admin/category')}}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg>{{trans('index.index.category')}}</a></li>
-			<li role="presentation" class="divider"></li>
-			<a href="{{asset('admin/subcategory')}}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg>Subcategory</a></li>
-			<li role="presentation" class="divider"></li>
+			<li><a href="{{asset('admin/subcategory')}}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg>Subcategory</a></li>
 		</ul>
 		
 	</div><!--/.sidebar-->

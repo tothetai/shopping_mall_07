@@ -31,7 +31,7 @@
 								<tbody>
 									@foreach($productlist as $product)
 									<tr>
-										<td>{{$product->pro_id}}</td>
+										<td>{{$product->id}}</td>
 										<td>{{$product->name}}</td>
 										<td>{{number_format($product->price,0,',','.')}} VND</td>
 										<td>
@@ -39,8 +39,8 @@
 										</td>
 										<td>{{$product->sub_name}}</td>
 										<td>
-											<a href="{{asset('admin/product/edit/'.$product->pro_id)}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
-											<a onclick="return confirm('Bạn có chắc chắn muốn xóa!')" href="{{asset('admin/product/delete/'.$product->pro_id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
+											<a href="{{asset('admin/product/edit/'.$product->id)}}" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</a>
+											<a onclick="return confirm('Bạn có chắc chắn muốn xóa!')" href="{{asset('admin/product/delete/'.$product->id)}}" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</a>
 										</td>
 									</tr>
 									@endforeach
