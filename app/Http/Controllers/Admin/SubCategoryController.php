@@ -13,12 +13,8 @@ class SubCategoryController extends Controller
 {
     //
     public function getSubCate(){
-<<<<<<< HEAD
-        $data['subcatelist'] = DB::table('sub_category')->join('categories','sub_category.cat_id','=','categories.cate_id')->orderBy('sub_id','desc')->get();
-=======
         // $data['subcatelist'] = DB::table('categories')->join('sub_category','sub_category.cat_id','=','categories.id')->orderBy('sub_category.id','desc')->get();
         $data['subcatelist'] = SubCategory::getSubCate()->get();
->>>>>>> Category Subcategory Product
         return view('backend.subcategory',$data);
     }
     public function getAddSubCate(){

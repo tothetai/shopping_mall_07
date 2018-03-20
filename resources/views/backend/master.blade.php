@@ -4,11 +4,7 @@
 <base href="{{asset('/')}}/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-<title>@yield('title')| LyLy Shop</title>
-=======
 <title>@yield('title')|Admin</title>
->>>>>>> Category Subcategory Product
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">

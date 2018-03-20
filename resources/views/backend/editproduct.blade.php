@@ -42,13 +42,8 @@
 								<div class="form-group" >
 									<label>Trạng thái</label>
 									<select required name="status" class="form-control">
-<<<<<<< HEAD
-										<option value="1" @if($product->status==1) checked @endif>Còn hàng</option>
-										<option value="0" @if($product->status==0) checked @endif>Hết hàng</option>
-=======
 										<option value="1" @if($product->status==1) selected @endif>Còn hàng</option>
 										<option value="0" @if($product->status==0) selected @endif>Hết hàng</option>
->>>>>>> Category Subcategory Product
 				                    </select>
 								</div>
 								<div class="form-group" >
