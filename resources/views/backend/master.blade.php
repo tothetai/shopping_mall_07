@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<base href="{{asset('')}}/">
+<base href="{{asset('/')}}/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>@yield('title')| Vietpro shop</title>
+<title>@yield('title')|Admin</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
@@ -15,7 +15,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">Vietpro Admin</a>
+				<a class="navbar-brand" href="{{asset('admin/home')}}">Admin</a>
 				<ul class="user-menu">
 					<li class="dropdown pull-right">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg>{{Auth::user()->email}}<span class="caret"></span></a>
@@ -32,10 +32,10 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<ul class="nav menu">
 			<li role="presentation" class="divider"></li>
-			<li class="active"><a href="index.html"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg>{{trans('index.index.home')}}</a></li>
-			<li><a href="widgets.html"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg>{{trans('index.index.product')}}</a></li>
-			<li><a href="charts.html"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg>{{trans('index.index.category')}}</a></li>
-			<li role="presentation" class="divider"></li>
+			<li class="active"><a href="{{asset('admin/home')}}"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg>{{trans('index.index.home')}}</a></li>
+			<li><a href="{{asset('admin/product')}}"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg>{{trans('index.index.product')}}</a></li>
+			<li><a href="{{asset('admin/category')}}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg>{{trans('index.index.category')}}</a></li>
+			<li><a href="{{asset('admin/subcategory')}}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg>Subcategory</a></li>
 		</ul>
 		
 	</div><!--/.sidebar-->
@@ -48,6 +48,7 @@
 	<script src="js/easypiechart.js"></script>
 	<script src="js/easypiechart-data.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/myscript.js"></script>
 	<script>
 		$('#calendar').datepicker({
 		});

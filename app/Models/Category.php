@@ -9,7 +9,8 @@ use App\Models\SubCategory;
 class Category extends Model
 {
    protected $table = 'categories';
-    
+   protected $guarded =[];
+  
    public function subCat()
    {
       return $this->hasMany(SubCategory::class, 'cat_id', 'id');

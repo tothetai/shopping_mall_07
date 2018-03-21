@@ -8,7 +8,7 @@ use App\Models\Product;
 
 class Comment extends Model
 {
-   protected $table = 'comment';
+   protected $table = 'comments';
 
    public function product()
    {
