@@ -15,7 +15,7 @@ class CategorysController extends Controller
 {
     //
     public function getCate(){
-    	$data['catelist']= DB::table('categories')->paginate(2);
+    	$data['catelist']= DB::table('categories')->paginate(4);
     	return view('backend.category',$data);
     }
     public function postCate(AddCateRequest $request){

@@ -56,12 +56,13 @@
 			            </table>
 					</div>
 					<div class="clearfix"></div>
-				</div>
+            		</div>
+					<div aria-label="Page navigation">
+                	{{$catelist -> links()}}
+					</div>
 			</div>
 		</div>
-            <div aria-label="Page navigation">
-                	{{$catelist -> links()}}
-            </div>
+            
         </div>
 	</div><!--/.row-->
 </div>	<!--/.main-->

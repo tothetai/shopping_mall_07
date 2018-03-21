@@ -45,7 +45,10 @@
 									</tr>
 									@endforeach
 								</tbody>
-							</table>							
+							</table>
+							<div aria-label="Page navigation">
+                				{{$productlist -> links()}}
+							</div>							
 						</div>
 					</div>
 					<div class="clearfix"></div>

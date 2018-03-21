@@ -14,7 +14,7 @@ class SubCategoryController extends Controller
     //
     public function getSubCate(){
         // $data['subcatelist'] = DB::table('categories')->join('sub_category','sub_category.cat_id','=','categories.id')->orderBy('sub_category.id','desc')->get();
-        $data['subcatelist'] = SubCategory::getSubCate()->get();
+        $data['subcatelist'] = SubCategory::getSubCate()->paginate(4);
         return view('backend.subcategory',$data);
     }
     public function getAddSubCate(){

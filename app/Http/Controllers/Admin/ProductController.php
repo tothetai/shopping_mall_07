@@ -12,7 +12,7 @@ class ProductController extends Controller
 //
     public function getProduct(){
     // $data['productlist'] = DB::table('sub_category')->join('products','products.sub_id','=','sub_category.id')->orderBy('products.id','desc')->get();
-        $data['productlist']= Product::getProduct()->get(); 
+        $data['productlist']= Product::getProduct()->paginate(4); 
         return view('backend.product',$data);
     }
     public function getAddProduct(){
