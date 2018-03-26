@@ -14,9 +14,10 @@ class LoginController extends Controller
 {
     //
     public function getLogin(){
-    	return view('backend.login');
+        return view('backend.login');
     }
     public function postLogin(Request $request) {
+        return $request->all();
         $rules = [
             'email' =>'required|email',
             'password' => 'required|min:6'
@@ -35,8 +36,9 @@ class LoginController extends Controller
             $email = $request->input('email');
             $password = $request->input('password');
 
-            if( Auth::attempt(['email' => $email, 'password' =>$password])) {
-                return redirect()->intended('admin/home');
+
+            if( Auth::attempt(['email' => $email, 'password' => $password, 'role' => [1] ])) {
+                return redirect()->intended('admin/homes');
             } else {
                 $errors = new MessageBag(['errorlogin' => 'Email hoặc mật khẩu không đúng']);
                 return redirect()->back()->withInput()->withErrors($errors);

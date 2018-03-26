@@ -23,6 +23,7 @@
         ],
 
         'homepage' => [
+            'productsame' => ' Product same ',
             'introduce' => 'Introduce',
             'search' => ' Search',
             'home' => 'Home',
@@ -83,6 +84,20 @@
             'support' => 'Support Sale',
             'phone' => 'Phone:0971885136',
             'company' => 'company information',
+            'proimg' => ' product images',
+            'del' => 'delete',
+            'continue' => 'continue',
+            'total_price' => 'total price',
+            'information_Purchase ' =>'information Purchase ',
+            'trans' => 'Transaction Payment (COD)',
+            'orders' => 'Order',
+            'sum' => 'totalize',
+            'goback' => 'Go back to your shopping cart',
+            'searchs' => 'Search Results',
+            'key' => 'search keyword',
+            'thanks' => 'Thank you for  order',
+            'check' => 'thanks you order. one email was sent to',
+            'checkmail' => 'Please check your email',
         ],
     ];
 ?>

@@ -13,11 +13,11 @@
                         <i class="fa fa-angle-right" aria-hidden="true"></i>
                     </a>
                 @if(count($ca->subCat) > 0)
-                    @foreach($ca->subCat as $subcat)       
-                        <ul class="level1">
-                            <li class="level1"><a href="/ao-nu"><span>{{ $subcat->sub_name }}</span></a></li>
-                        </ul>
-                    @endforeach
+                    <ul class="level1">
+                        @foreach($ca->subCat as $subcat)     
+                            <li class="level1"><a href="{{route('SubProduct', $subcat->id)}}"><span>{{ $subcat->sub_name }}</span></a></li>
+                        @endforeach
+                    </ul>
                  @endif
                 </li>
         @endforeach

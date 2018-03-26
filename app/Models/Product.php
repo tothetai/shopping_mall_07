@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\BillDetail;
 use App\Models\Comment;
 use App\Models\Size;
+use Cart;
+use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
 {
@@ -42,4 +44,5 @@ class Product extends Model
         return $query->where('new', '>', 0);
     } 
 
+    
 }
