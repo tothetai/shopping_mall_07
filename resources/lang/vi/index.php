@@ -5,9 +5,7 @@
             'email' => 'E-mail',
             'password' => 'Mật Khẩu',
             'submit' => 'Đăng nhập',
-            'name' => 'Họ Và Tên',
         ],
-
         'index' => [
             'logout' => 'Đăng xuất',
             'home' => 'Trang chủ',

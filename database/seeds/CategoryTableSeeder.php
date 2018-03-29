@@ -1,5 +1,4 @@
 <?php
-
 use App\Models\Category;
 use Illuminate\Database\Seeder;
 

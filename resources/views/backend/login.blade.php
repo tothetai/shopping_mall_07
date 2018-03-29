@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login</title>
-
+<base href="{{asset('/')}}/">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/datepicker3.css" rel="stylesheet">
 <link href="css/styles.css" rel="stylesheet">
@@ -19,7 +19,7 @@
 			<div class="login-panel panel panel-default">
 				<div class="panel-heading">{{trans('index.login.login')}}</div>
 				<div class="panel-body">
-					<form action="{{url('login')}}" method="POST" role="form">
+					<form action="{{url('logins')}}" method="POST" role="form">
 					@if($errors->has('errorlogin'))
 						<div class="alert alert-danger">
 							<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>

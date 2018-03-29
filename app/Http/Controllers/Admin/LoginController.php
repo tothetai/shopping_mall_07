@@ -23,6 +23,7 @@ class LoginController extends Controller
             'password' => $request->password
         ];
 
+
         if(Auth::attempt($logins)){
 
             return redirect('backend.index');
@@ -31,7 +32,25 @@ class LoginController extends Controller
         else
         {
             return redirect('login')->with('message',' Email hoặc password sai !');
+        $validator = Validator::make($request->all(), $rules, $messages);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } else {
+            $email = $request->input('email');
+            $password = $request->input('password');
+
+            if( Auth::attempt(['email' => $email, 'password' => $password, 'role' => [1,2] ])) {
+                return redirect()->intended('admin/homes');
+            } else {
+                $errors = new MessageBag(['errorlogin' => 'Email hoặc mật khẩu không đúng']);
+                return redirect()->back()->withInput()->withErrors($errors);
+            }
         }
         
     }
+
 }
+
+}    
+

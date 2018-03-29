@@ -25,16 +25,24 @@ Route::group(['namespace'=>'Admin'],function(){
         Route::post('/','LoginController@postLogin')->name('postLogin');
     });
     Route::get('logouts','HomeController@getLogout');
+
     Route::group(['prefix' => 'admin','middleware'=>'CheckLogedOut'],function(){
         Route::get('homes','HomeController@getHome');
 
         Route::group(['prefix' => 'user','middleware'=>'CheckLogedOut'],function(){
+
+    Route::group(['prefix'=>'admin','middleware'=>'CheckLogedOut'],function(){
+        Route::get('homes','HomeController@getHome');
+
+        Route::group(['prefix'=>'user','middleware'=>'CheckLogedOut'],function(){
+
         Route::get('/',['as'=>'showuser','uses'=>'UserController@getUser']);
         Route::get('add','UserController@getAddUser');
         Route::post('add','UserController@postAddUser');
         Route::get('edit/{id}','UserController@getEditUser');
         Route::post('edit/{id}','UserController@postEditUser');
         Route::get('delete/{id}',['as'=>'getDeleteUser','uses'=>'UserController@getDeleteUser']);
+
 
         });
 
@@ -62,22 +70,50 @@ Route::group(['namespace'=>'Admin'],function(){
             Route::post('edit/{id}','ProductController@postEditProduct');
             Route::get('delete/{id}','ProductController@getDeleteProduct');
         });
+
+    	});
+
+       
+        Route::group(['prefix'=>'category'],function(){
+			Route::get('/','CategorysController@getCate');
+			Route::post('/',['as'=>'postCate','uses'=>'CategorysController@postCate']);
+			Route::get('edit/{id}','CategorysController@getEditCate');
+			Route::post('edit/{id}','CategorysController@postEditCate');
+			Route::get('delete/{id}','CategorysController@getDeleteCate');
+		});
+		Route::group(['prefix'=>'subcategory'],function(){
+			Route::get('/','SubCategoryController@getSubCate');
+			Route::get('add','SubCategoryController@getAddSubCate');
+			Route::post('add','SubCategoryController@postAddSubCate');
+			Route::get('edit/{id}','SubCategoryController@getEditSubCate');
+			Route::post('edit/{id}','SubCategoryController@postEditSubCate');
+			Route::get('delete/{id}','SubCategoryController@getDeleteSubCate');
+		});
+
+		Route::group(['prefix'=>'product'],function(){
+			Route::get('/','ProductController@getProduct');
+			Route::get('add','ProductController@getAddProduct');
+			Route::post('add','ProductController@postAddProduct');
+			Route::get('edit/{id}','ProductController@getEditProduct');
+			Route::post('edit/{id}','ProductController@postEditProduct');
+			Route::get('delete/{id}','ProductController@getDeleteProduct');
+		});
+
     });
 });
 
+		
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('homepage', 'FrontController@homepage');
 Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
-
 Route::get('register', 'FrontController@getRegister');
 Route::post('register', 'FrontController@postRegister');
-
 Route::get('login', 'FrontController@getlogin');
 Route::post('login', 'FrontController@postlogin');
-
 Route::get('logout', 'FrontController@logout');
 Route::get('product', 'FrontController@products');
 Route::get('product-Detail/{id}', [
+
         'as' => 'productDetail',
         'uses' => 'FrontController@productDetail'
     ]);
@@ -99,5 +135,10 @@ Route::get('catpro/{id}',  [
         'uses' => 'FrontController@getcatpro'
     ]);
 Route::post('/comment', 'FrontController@postComment');
+
+		'as' => 'productDetail',
+		'uses' => 'FrontController@productDetail'
+	]);
+
 
 
