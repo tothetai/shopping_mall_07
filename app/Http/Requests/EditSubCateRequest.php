@@ -25,7 +25,7 @@ class EditSubCateRequest extends FormRequest
     {
         return [
             //
-            'name'=>'unique:sub_category,sub_name,'.$this->segment(4).',sub_id',
+            'name'=>'unique:sub_category,sub_name,'.$this->segment(4).',id',
         ];
     }
     public function messages(){

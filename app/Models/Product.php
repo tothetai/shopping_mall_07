@@ -14,7 +14,8 @@ class Product extends Model
 {
     protected $table = 'products';
     protected $guarded =[];
-    
+    protected $fillable = ['name', 'pro_slug','price','quantity','discount','discount','promotion','condition','status','description','featured','new','sub_id','img'];
+   
     public function billDetail()
     {
         return $this->belongsTo(BillDetail::class);

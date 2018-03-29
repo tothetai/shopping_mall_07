@@ -29,7 +29,7 @@
 					<svg class="glyph stroked empty-message"><use xlink:href="#stroked-empty-message"></use></svg>
 				</div>
 				<div class="col-sm-9 col-lg-7 widget-right">
-					<div class="large">52</div>
+					<div class="large">{{ count(DB::table('comments')->get()) }}</div>
 					<div class="text-muted">{{trans('index.index.comment')}}</div>
 				</div>
 			</div>

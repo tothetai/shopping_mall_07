@@ -28,4 +28,5 @@ class AddProductRequest extends FormRequest
             'img'=>'image'
         ];
     }
+    
 }

@@ -3,4 +3,5 @@
     'defaultDiscount' => 0,
     'defaultAvatar' => 'avatar.jpg',
     'defaultimg' => 'img.png',
+    'defaultimgs' => 'public/avatar',
   ];

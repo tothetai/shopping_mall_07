@@ -20,23 +20,42 @@ class ProductController extends Controller
         return view('backend.addproduct',$data);
     }
     public function postAddProduct(AddProductRequest $request){
+        //$product = new Product();
         $filename= $request->img->getClientOriginalName();
-        $product = new Product;
-        $product->name = $request->name;
-        $product->pro_slug =str_slug($request->name);
-        $product->price = $request->price;
-        $product->quantity = $request->quantity;
-        $product->discount = $request->discount;
-        $product->img = $filename;
-        $product->promotion = $request->promotion;
-        $product->condition = $request->condition;
-        $product->status = $request->status;
-        $product->description = $request->description;
-        $product->featured = $request->featured;
-        $product->new = $request->new;
-        $product->sub_id = $request->subcate;
-        $product->save();
-        $request->img->storeAs('public/avatar',$filename);
+            $product = Product::create([
+            'name' => $request->name,
+            'pro_slug' => str_slug($request->name),
+            'price' => $request->price,
+            'quantity' => $request->quantity,
+            'discount' => $request->discount,
+            'img' => $filename,
+            'promotion' => $request->promotion,
+            'condition' => $request->condition,
+            'status' => $request->status,
+            'description' => $request->description,
+            'featured' => $request->featured,
+            'new' => $request->new,
+            'sub_id' => $request->subcate,
+        ]);
+        
+
+        $request->img->storeAs(config('custom.defaultimgs'), $filename);
+        //$product = new Product;
+        // $product->name = $request->name;
+        // $product->pro_slug =str_slug($request->name);
+        // $product->price = $request->price;
+        // $product->quantity = $request->quantity;
+        // $product->discount = $request->discount;
+        // $product->img = $filename;
+        // $product->promotion = $request->promotion;
+        // $product->condition = $request->condition;
+        // $product->status = $request->status;
+        // $product->description = $request->description;
+        // $product->featured = $request->featured;
+        // $product->new = $request->new;
+        // $product->sub_id = $request->subcate;
+        // $product->save();
+        $request->img->storeAs(config('custom.defaultimgs'), $filename);
         return redirect('admin/product'); 
     }
     public function getEditProduct($id){

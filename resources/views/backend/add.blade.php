@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Thêm User</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -23,23 +23,18 @@
         	<nav class="navbar navbar-default">
   				<div class="container-fluid">
                 	<ul class="nav navbar-nav">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Users</a></li>
-                        <li><a href="#">Add user</a></li>
+                        <li><a href="{{asset('admin/homes')}}">Home</a></li>
+                        <li><a href="{{asset('admin/user')}}">Users</a></li>
+                        <li><a href="{{asset('admin/user/add')}}">Add user</a></li>
                 	</ul>
-                    <p id="logout" class="navbar-text navbar-right"><a class="navbar-link" href="#">Logout</a></p>
                 </div>
             </nav>
         </div>
     </div>
     <div class="row">
     	<div class="col-sm-6">
-        	<div class="alert alert-danger">User exist!</div>
+            @include('errors.note')
         	<form method="post">
-            	<div class="form-group">
-                	<label>Fullname</label>
-                    <input type="text" name="full" class="form-control" placeholder="Fullname" required />
-                </div>
                 <div class="form-group">
                 	<label>Username</label>
                     <input type="text" name="user" class="form-control" placeholder="Username" required />
@@ -56,12 +51,14 @@
                 	<label>Level</label>
                     <select name="level" class="form-control">
                     	<option value="1">Admin</option>
-                        <option value="2">Mod</option>
+                        <option value="2" >Mod</option>
                         <option value="3" selected="selected">User</option>
                     </select>
                 </div>
                 <input type="submit" name="submit" value="Thêm mới" class="btn btn-primary" />
+                {{csrf_field()}}
             </form>
+            
         </div>
     </div>
 </div>

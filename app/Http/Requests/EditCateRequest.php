@@ -25,7 +25,7 @@ class EditCateRequest extends FormRequest
     {
         return [
             //
-             'name'=>'unique:categories,cat_name,'.$this->segment(4).',cate_id',
+             'name'=>'unique:categories,cat_name,'.$this->segment(4).',id',
         ];
     }
     public function messages(){

@@ -19,21 +19,29 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group(['namespace'=>'Admin'],function(){
-    Route::group(['prefix'=>'login/admin','middleware'=>'CheckLogedIn'],function(){
+    Route::group(['prefix'=>'logins','middleware'=>'CheckLogedIn'],function(){
         Route::get('/','LoginController@getLogin')->name('getLogin');
         
         Route::post('/','LoginController@postLogin')->name('postLogin');
     });
-    Route::get('logout/admin','HomeController@getLogout');
+    Route::get('logouts','HomeController@getLogout');
     Route::group(['prefix'=>'admin','middleware'=>'CheckLogedOut'],function(){
-        Route::get('home','HomeController@getHome');
-        Route::group(['prefix'=>'category'],function(){
-            Route::get('/','CategorysController@getCate');
-            Route::get('edit','CategorysController@getEditCate');
-        });
+        Route::get('homes','HomeController@getHome');
+
+        Route::group(['prefix'=>'user','middleware'=>'CheckLogedOut'],function(){
+        Route::get('/',['as'=>'showuser','uses'=>'UserController@getUser']);
+        Route::get('add','UserController@getAddUser');
+        Route::post('add','UserController@postAddUser');
+        Route::get('edit/{id}','UserController@getEditUser');
+        Route::post('edit/{id}','UserController@postEditUser');
+        Route::get('delete/{id}',['as'=>'getDeleteUser','uses'=>'UserController@getDeleteUser']);
+
+    	});
+
+       
         Route::group(['prefix'=>'category'],function(){
 			Route::get('/','CategorysController@getCate');
-			Route::post('/','CategorysController@postCate');
+			Route::post('/',['as'=>'postCate','uses'=>'CategorysController@postCate']);
 			Route::get('edit/{id}','CategorysController@getEditCate');
 			Route::post('edit/{id}','CategorysController@postEditCate');
 			Route::get('delete/{id}','CategorysController@getDeleteCate');
@@ -71,6 +79,6 @@ Route::get('product', 'FrontController@products');
 Route::get('product-Detail/{id}', [
 		'as' => 'productDetail',
 		'uses' => 'FrontController@productDetail'
-]);
+	]);
 
 

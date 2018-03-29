@@ -13,7 +13,6 @@ use DB;
 
 class CategorysController extends Controller
 {
-    //
     public function getCate(){
     	$data['catelist']= DB::table('categories')->paginate(4);
     	return view('backend.category',$data);
@@ -23,7 +22,7 @@ class CategorysController extends Controller
     	$category ->cat_name =$request->name;
     	$category ->cat_slug =str_slug($request->name);
     	$category ->save();
-    	return back();
+    	return redirect() -> route('postCate')->with(['flash_level' => 'success','flash_message' => 'Thêm thành công']);
     }
     public function getEditCate($id){
     	$data['cate'] =Category::find($id);
