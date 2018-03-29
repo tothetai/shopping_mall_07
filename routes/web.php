@@ -81,9 +81,6 @@ Route::get('product-Detail/{id}', [
 		'as' => 'productDetail',
 		'uses' => 'FrontController@productDetail'
 	]);
-        'as' => 'productDetail',
-        'uses' => 'FrontController@productDetail'
-    ]);
 
 Route::get('checkout', 'CartController@checkout');
 Route::post('checkout', 'CartController@postcheckout');

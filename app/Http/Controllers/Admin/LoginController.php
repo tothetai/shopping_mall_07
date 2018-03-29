@@ -17,7 +17,6 @@ class LoginController extends Controller
         return view('backend.login');
     }
     public function postLogin(Request $request) {
-        return $request->all();
         $rules = [
             'email' =>'required|email',
             'password' => 'required|min:6'
