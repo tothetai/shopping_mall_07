@@ -9,6 +9,8 @@ use App\Models\Comment;
 use App\Models\Size;
 use App\Http\Requests\AddProductRequest;
 use DB;
+use Cart;
+use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
 {
@@ -46,4 +48,5 @@ class Product extends Model
         return $data = DB::table('sub_category')->join('products','products.sub_id','=','sub_category.id')->orderBy('products.id','desc');
     }
 
+    
 }

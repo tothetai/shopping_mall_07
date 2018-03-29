@@ -25,6 +25,7 @@ Route::group(['namespace'=>'Admin'],function(){
         Route::post('/','LoginController@postLogin')->name('postLogin');
     });
     Route::get('logouts','HomeController@getLogout');
+
     Route::group(['prefix'=>'admin','middleware'=>'CheckLogedOut'],function(){
         Route::get('homes','HomeController@getHome');
 
@@ -35,7 +36,6 @@ Route::group(['namespace'=>'Admin'],function(){
         Route::get('edit/{id}','UserController@getEditUser');
         Route::post('edit/{id}','UserController@postEditUser');
         Route::get('delete/{id}',['as'=>'getDeleteUser','uses'=>'UserController@getDeleteUser']);
-
     	});
 
        
@@ -63,6 +63,7 @@ Route::group(['namespace'=>'Admin'],function(){
 			Route::post('edit/{id}','ProductController@postEditProduct');
 			Route::get('delete/{id}','ProductController@getDeleteProduct');
 		});
+       
     });
 });
 
@@ -80,5 +81,27 @@ Route::get('product-Detail/{id}', [
 		'as' => 'productDetail',
 		'uses' => 'FrontController@productDetail'
 	]);
+        'as' => 'productDetail',
+        'uses' => 'FrontController@productDetail'
+    ]);
+
+Route::get('checkout', 'CartController@checkout');
+Route::post('checkout', 'CartController@postcheckout');
+Route::get('thanks', 'CartController@thanks');
+//cart
+Route::post('cart/add', 'CartController@addItem');
+Route::get('cart', 'CartController@index');
+Route::post('updateCart','CartController@updateCart');
+Route::post('updateCart/{id}/{qty}','CartController@updateCart');
+Route::get('delCart/{id}', 'CartController@deleteCart');
+Route::post('seach','FrontController@seach');
+
+Route::get('send', 'FrontController@getmail');
+Route::get('catpro/{id}',  [
+        'as' => 'SubProduct',
+        'uses' => 'FrontController@getcatpro'
+    ]);
+Route::post('/comment', 'FrontController@postComment');
+
 
 
