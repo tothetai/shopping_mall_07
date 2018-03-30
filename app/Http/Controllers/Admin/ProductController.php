@@ -20,7 +20,6 @@ class ProductController extends Controller
         return view('backend.addproduct',$data);
     }
     public function postAddProduct(AddProductRequest $request){
-        //$product = new Product();
         $filename= $request->img->getClientOriginalName();
             $product = Product::create([
             'name' => $request->name,
@@ -28,7 +27,7 @@ class ProductController extends Controller
             'price' => $request->price,
             'quantity' => $request->quantity,
             'discount' => $request->discount,
-            'img' => $filename,
+            'img' => $request->img->getClientOriginalName(),
             'promotion' => $request->promotion,
             'condition' => $request->condition,
             'status' => $request->status,
@@ -37,9 +36,6 @@ class ProductController extends Controller
             'new' => $request->new,
             'sub_id' => $request->subcate,
         ]);
-        
-
-        $request->img->storeAs(config('custom.defaultimgs'), $filename);
         //$product = new Product;
         // $product->name = $request->name;
         // $product->pro_slug =str_slug($request->name);
@@ -73,10 +69,11 @@ class ProductController extends Controller
         $arr['description'] = $request->description;
         $arr['sub_id'] = $request->subcate;
         $arr['featured'] = $request->featured;
+        $arr['new'] = $request->new;
         if($request->Hasfile('img')){
         $img = $request->img->getClientOriginalName();
         $arr['img'] = $img;
-        $request->img->storeAs('public/avatar',$img);
+        $request->img->storeAs('public/storage/avatar',$img);
         }
         $product::where('id',$id)->update($arr);
         return redirect('admin/product');

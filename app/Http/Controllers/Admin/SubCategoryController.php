@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Product;
 use App\Models\SubCategory;
 use App\Http\Requests\AddSubCateRequest;
 use App\Http\Requests\EditSubCateRequest;
@@ -45,7 +46,21 @@ class SubCategoryController extends Controller
         return redirect()->intended('admin/subcategory');
     }
     public function getDeleteSubCate($id){
-        SubCategory::destroy($id);
-        return back();
+        $data['productlist'] = DB::table('products')->join('sub_category','products.sub_id','=','sub_category.id');
+        $parent = Product::where('sub_id',$id)->count();
+        if($parent == 0){
+            SubCategory::destroy($id);
+            return redirect() -> route('showsubcate')->with(['flash_level' => 'success','flash_message' => 'Xóa thành công']);
+        }
+        else{
+            echo '
+                <script type ="text/javascript">
+                    alert("Xin lỗi!Bạn không được Xóa");
+                    window.location = "';
+                    echo route('showsubcate');
+            echo '"
+                </script>';
+        }
+       
     }
 }

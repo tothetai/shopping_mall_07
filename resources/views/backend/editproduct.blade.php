@@ -70,6 +70,11 @@
                                     Có: <input type="radio" name="featured" value="1" @if($product->featured==1) checked @endif>
                                     Không: <input type="radio" name="featured" value="0" @if($product->featured==0) checked @endif>
                                 </div>
+                                <div class="form-group" >
+                                    <label>Sản phẩm mới</label><br>
+                                    Có: <input type="radio" name="new" value="1" @if($product->new == 1) checked @endif)>
+                                    Không: <input type="radio" name="new" value="0" @if($product->new == 0) checked @endif>
+                                </div>
                                 <input type="submit" name="submit" value="Cập nhật" class="btn btn-primary">
                                 <a href="#" class="btn btn-danger">Hủy bỏ</a>
                             </div>

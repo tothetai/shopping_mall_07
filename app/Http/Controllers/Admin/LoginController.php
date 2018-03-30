@@ -35,7 +35,7 @@ class LoginController extends Controller
             $email = $request->input('email');
             $password = $request->input('password');
 
-            if( Auth::attempt(['email' => $email, 'password' => $password, 'role' => [1,2] ])) {
+            if( Auth::attempt(['email' => $email, 'password' => $password, 'role' => [1] ])) {
 
                 return redirect()->intended('admin/homes');
             } else {

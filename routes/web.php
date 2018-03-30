@@ -47,12 +47,12 @@ Route::group(['namespace'=>'Admin'],function(){
 			Route::get('delete/{id}','CategorysController@getDeleteCate');
 		});
 		Route::group(['prefix'=>'subcategory'],function(){
-			Route::get('/','SubCategoryController@getSubCate');
+			Route::get('/',['as'=>'showsubcate','uses'=>'SubCategoryController@getSubCate']);
 			Route::get('add','SubCategoryController@getAddSubCate');
 			Route::post('add','SubCategoryController@postAddSubCate');
 			Route::get('edit/{id}','SubCategoryController@getEditSubCate');
 			Route::post('edit/{id}','SubCategoryController@postEditSubCate');
-			Route::get('delete/{id}','SubCategoryController@getDeleteSubCate');
+			Route::get('delete/{id}',['as'=>'getsubdel','uses'=>'SubCategoryController@getDeleteSubCate']);
 		});
 
 		Route::group(['prefix'=>'product'],function(){
