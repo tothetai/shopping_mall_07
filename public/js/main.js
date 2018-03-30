@@ -36,5 +36,19 @@ $(document).ready(function(event) {
             }   
         });
     });
+    $('body').on('click', '.add-cart',  function(event) {
+        event.preventDefault();
+        var product = $(this).attr('data-id');
+        qty = $('input[name="quantity"]').val(),
+        $.ajax({
+            url: '/cart/add',
+            type: 'post',
+            data: { product: product, qty:qty },
+            success: function(data) {
+                console.log(data);
+                /*$('.cart-icon').html(data);*/
+            }   
+        });
+    });
 
 })

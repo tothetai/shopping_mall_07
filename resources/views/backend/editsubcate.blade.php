@@ -23,6 +23,14 @@
                         </div>
                     </div>
                     <div class="form-group">
+                    <div class="form-group" >
+                            <label>Danh mục</label>
+                            <select required name="cate" class="form-control">
+                                @foreach($catelist as $cate)
+                                <option value="{{$cate->id}}" @if($subcate->cat_id == $cate->id) selected @endif>{{$cate->cat_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>    
                         <input type="submit" name="submit" class="form-control btn btn-primary" value="Sửa">
                     </div>
                     <div class="form-group">

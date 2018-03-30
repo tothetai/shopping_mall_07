@@ -30,7 +30,7 @@
                         <h4><strong>{{ Lang::get('index.homepage.info') }}</strong></h4>
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12">
-                        <p>{{ Lang::get('index.login.name') }}<span>*</span></p>
+                        <p>Họ và tên<span>*</span></p>
                         <input type="text" name="name" class="txt-login txt-name" required="required">
                         <p>{{ Lang::get('index.login.email') }} <span>*</span></p>
                         <input type="email" name="email" class="txt-login" required="required">

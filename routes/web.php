@@ -25,12 +25,6 @@ Route::group(['namespace'=>'Admin'],function(){
         Route::post('/','LoginController@postLogin')->name('postLogin');
     });
     Route::get('logouts','HomeController@getLogout');
-
-    Route::group(['prefix' => 'admin','middleware'=>'CheckLogedOut'],function(){
-        Route::get('homes','HomeController@getHome');
-
-        Route::group(['prefix' => 'user','middleware'=>'CheckLogedOut'],function(){
-
     Route::group(['prefix'=>'admin','middleware'=>'CheckLogedOut'],function(){
         Route::get('homes','HomeController@getHome');
 
@@ -43,18 +37,17 @@ Route::group(['namespace'=>'Admin'],function(){
         Route::post('edit/{id}','UserController@postEditUser');
         Route::get('delete/{id}',['as'=>'getDeleteUser','uses'=>'UserController@getDeleteUser']);
 
-
         });
 
         Route::group(['prefix'=>'category'],function(){
-            Route::get('/','CategorysController@getCate');
+            Route::get('/',['as'=>'showcate','uses'=>'CategorysController@getCate']);
             Route::post('/',['as'=>'postCate','uses'=>'CategorysController@postCate']);
             Route::get('edit/{id}','CategorysController@getEditCate');
             Route::post('edit/{id}','CategorysController@postEditCate');
             Route::get('delete/{id}','CategorysController@getDeleteCate');
         });
         Route::group(['prefix'=>'subcategory'],function(){
-            Route::get('/','SubCategoryController@getSubCate');
+            Route::get('/',['as'=>'showsubcate','uses'=>'SubCategoryController@getSubCate']);
             Route::get('add','SubCategoryController@getAddSubCate');
             Route::post('add','SubCategoryController@postAddSubCate');
             Route::get('edit/{id}','SubCategoryController@getEditSubCate');
@@ -99,7 +92,7 @@ Route::group(['namespace'=>'Admin'],function(){
 			Route::get('delete/{id}','ProductController@getDeleteProduct');
 		});
 
-    });
+        Route::get('listBillDetail', 'BillDetailController@listbill');
 });
 
 		
@@ -112,6 +105,9 @@ Route::get('login', 'FrontController@getlogin');
 Route::post('login', 'FrontController@postlogin');
 Route::get('logout', 'FrontController@logout');
 Route::get('product', 'FrontController@products');
+Route::get('contact', 'FrontController@getcontact');
+Route::get('introduct', 'FrontController@getintroduct');
+
 Route::get('product-Detail/{id}', [
 
         'as' => 'productDetail',
@@ -135,10 +131,6 @@ Route::get('catpro/{id}',  [
         'uses' => 'FrontController@getcatpro'
     ]);
 Route::post('/comment', 'FrontController@postComment');
-
-		'as' => 'productDetail',
-		'uses' => 'FrontController@productDetail'
-	]);
 
 
 

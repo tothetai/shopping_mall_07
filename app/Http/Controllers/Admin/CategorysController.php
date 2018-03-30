@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\SubCategory;
 use App\Http\Requests\AddCateRequest;
 use App\Http\Requests\EditCateRequest;
 use DB;
@@ -20,7 +21,6 @@ class CategorysController extends Controller
     public function postCate(AddCateRequest $request){
     	$category = new Category;
     	$category ->cat_name =$request->name;
-    	$category ->cat_slug =str_slug($request->name);
     	$category ->save();
     	return redirect() -> route('postCate')->with(['flash_level' => 'success','flash_message' => 'Thêm thành công']);
     }
@@ -36,7 +36,20 @@ class CategorysController extends Controller
     	return redirect()->intended('admin/category');
     }
     public function getDeleteCate($id){
-    	Category::destroy($id);
-    	return back();
+    	$data['productlist'] = DB::table('sub_category')->join('categories','sub_category.cat_id','=','categories.id');
+        $parent = SubCategory::where('cat_id',$id)->count();
+        if($parent == 0){
+            Category::destroy($id);
+            return redirect() -> route('showcate')->with(['flash_level' => 'success','flash_message' => 'Xóa thành công']);
+        }
+        else{
+            echo '
+                <script type ="text/javascript">
+                    alert("Xin lỗi!Bạn không được Xóa");
+                    window.location = "';
+                    echo route('showcate');
+            echo '"
+                </script>';
+        }  
     }
 }

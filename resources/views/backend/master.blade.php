@@ -3,13 +3,17 @@
 <head>
 <base href="{{asset('/')}}/">
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" name="csrf-token" content="{{ csrf_token() }}">
 <title>@yield('title')|Admin</title>
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/datepicker3.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-<script type="text/javascript" src="ckeditor/ckeditor.js"></script>
-<script src="js/lumino.glyphs.js"></script>
+
+{!! Html::style('css/bootstrap.min.css') !!}
+{!! Html::style('css/datepicker3.css') !!}
+{!! Html::style('css/styles.css') !!}
+{!! Html::script('ckeditor/ckeditor.js') !!} 
+{!! Html::script('js/lumino.glyphs.js') !!} 
+
+
+
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -36,20 +40,21 @@
             <li><a href="{{asset('admin/product')}}"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg>{{trans('index.index.product')}}</a></li>
             <li><a href="{{asset('admin/category')}}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg>{{trans('index.index.category')}}</a></li>
             <li><a href="{{asset('admin/subcategory')}}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg>Subcategory</a></li>
-            <li><a href="{{asset('admin/user')}}"><svg class="glyph stroked male-user"><use xlink:href="#stroked-line-graph"></use></svg>User</a></li>
+            <li><a href="{{asset('admin/user')}}"><svg class="glyph stroked male-user"><use xlink:href="#stroked-line-graph"></use></svg>User</a></li><li><a href="{{asset('listBillDetail')}}"><svg class="glyph stroked male-user"><use xlink:href="#stroked-line-graph"></use></svg>Hóa Đơn</a></li>
         </ul>
         
     </div><!--/.sidebar-->
     <!--main-->
     @yield('main')
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/chart.min.js"></script>
-    <script src="js/chart-data.js"></script>
-    <script src="js/easypiechart.js"></script>
-    <script src="js/easypiechart-data.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-    <script src="js/myscript.js"></script>
+    {!! Html::script('js/jquery-1.11.1.min.js') !!} 
+    {!! Html::script('js/bootstrap.min.js') !!} 
+    {!! Html::script('js/chart.min.js') !!} 
+    {!! Html::script('js/chart-data.js') !!} 
+    {!! Html::script('js/easypiechart.js') !!} 
+    {!! Html::script('js/easypiechart-data.js') !!} 
+    {!! Html::script('js/bootstrap-datepicker.js') !!}
+    {!! Html::script('js/myscript.js') !!} 
+
     <script>
         $('#calendar').datepicker({
         });

@@ -37,10 +37,8 @@
                             <div class="space20">&nbsp;</div>
                             <span style="margin-right:20px; ">Số lượng:</span>
                             <div class="single-item-options">
-                                <form action="" method="get" accept-charset="utf-8">
                                     <input type="text" id="qtym" name="quantity" value="1" min="1"  style="width: 10%;" />
-                                    <a class="add-to-cart l" data-product-id="{{ $product->id }}"><i class="fa fa-shopping-cart "></i></a>
-                                </form>
+                                    <a class="add-to-cart l" data-product-id="{{$product->id}}"><i class="fa fa-shopping-cart "></i></a>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="space20">&nbsp;</div>
@@ -58,7 +56,6 @@
                             </div>
                             <button type="submit" class="btn btn-primary">{{ lang::get('index.homepage.submit') }}</button>
                         </form>
-                        <?php print_r($comment->content); ?>
                     </div>
                     @else
                     <div class="well">
@@ -81,65 +78,40 @@
                         <div class="beta-products-details">
                             <div class="clearfix"></div>
                         </div>
-                        <div class="content3-slide owl-theme owl-carousel">
-                            <div class="row noboder">
-                                @foreach($pros as $proi)
-                                <div class="col-sm-3">
-                                    <div class="single-item">
-                                        <div class="single-item-header">
-                                            <a href="{{route('productDetail', $proi->id)}}"><img src="{{url('assets/uploads').'/'.$proi->img}}" alt=""></a>
-                                        </div>
-                                        <div class="single-item-body">
-                                            <p class="single-item-title">{{$proi->name}}</p>
-                                            <p class="single-item-price">
-                                                @if($proi->discount==0)
-                                                <span class="flash-sale">${{$proi->price}}</span>
-                                                @else
-                                                <span class="flash-del">${{$proi->price}}</span>
-                                                <span class="flash-sale">${{$proi->discount}}</span>
-                                                @endif
-                                            </p>
-                                        </div>
-                                        <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left"  data-product-id="{{ $proi->id }}"><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="beta-btn primary" href="{{route('productDetail', $proi->id)}}">Details <i class="fa fa-chevron-right"></i></a>
-                                            <div class="clearfix"></div>
-                                        </div>
+                        <div class="row  same">
+                            <p class="pull-left">Có {{ count($sp_tuongtu) }} {{ Lang::get('index.homepage.product') }}</p>
+                            <div class="clearfix"></div>
+                            @foreach($sp_tuongtu as $proi)
+                            <div class="col-sm-3">
+                                <div class="single-item">
+                                    <div class="single-item-header">
+                                        <a href="{{route('productDetail', $proi->id)}}"><img src="{{url('assets/uploads').'/'.$proi->img}}" alt=""></a>
+                                    </div>
+                                    <div class="single-item-body">
+                                        <p class="single-item-title">{{$proi->name}}</p>
+                                        <p class="single-item-price">
+                                            @if($proi->discount==0)
+                                            <span class="flash-sale">${{$proi->price}}</span>
+                                            @else
+                                            <span class="flash-del">${{$proi->price}}</span>
+                                            <span class="flash-sale">${{$proi->discount}}</span>
+                                            @endif
+                                        </p>
+                                    </div>
+                                    <div class="single-item-caption up">
+                                        <a class="add-to-cart "  data-product-id="{{ $proi->id }}"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="beta-btn primary" href="{{route('productDetail', $proi->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+                                        <div class="clearfix"></div>
                                     </div>
                                 </div>
-                                @endforeach 
                             </div>
+                            @endforeach 
                         </div>
                         <!-- .beta-products-list -->
                     </div>
                 </div>
 
-                <div class="col-sm-3 aside">
-                    <div class="widget">
-                        <div class="best_product block">
-                            <div class="block-title">
-                                <h5>{{ Lang::get('index.homepage.care')}}</h5>
-                            </div>
-                            <div class="block-content" id="scro" style="overflow: hidden; width: 270px; height: 90px;">
-                                <div class="owl_hot_sale  owl-carousel owl-theme">
-                                    <div class="item cat-slide-item"> 
-                                        @foreach($data['slide'] as $proItem)
-                                        <div class="item item_pd">
-                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-5 item-img">
-                                                <a href="{{route('productDetail', $proItem->id)}}"><img src="{{url('assets/uploads').'/'.$proItem->img}}"  width="81" height="81" alt="Sản phẩm demo"></a>
-                                            </div>
-                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-7 item-info">
-                                                <p class="item-name"><a href="{{route('productDetail', $proItem->id)}}">{{$proItem->name}}</a></p>
-                                                <p class="item-price cl_price fs16"><span>${{$proItem->price}}</span></p>
-                                            </div>
-                                        </div>
-                                        @endforeach
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- best sellers widget -->
+                <div class="col-sm-3 aside"><!-- best sellers widget -->
                     <div class="widget">
                         <h3 class="widget-title">{{ Lang::get('index.homepage.discountproduct')}}</h3>
                         <div class="widget-body">

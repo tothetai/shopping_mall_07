@@ -18,7 +18,7 @@
         ],
 
         'header' => [
-            'welcome' => 'Welcome to TITIKAKASHOP!',
+            'welcome' => 'Welcome to LyLyFashion!',
             'copyright' => 'Copyright &copy; 2014-2016',
         ],
 

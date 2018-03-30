@@ -35,6 +35,6 @@ class SendMail extends Mailable
      */
     public function build(Request $req)
     {
-        return $this->view('frontend.partials.mail');
+        return $this->view('frontend.partials.item_mail');
     }
 }

@@ -49,7 +49,7 @@ class UserController extends Controller
     public function getDeleteUser($id){
     	$user_current_login = Auth::user()->id;
     	$data_delete = User::find($id);
-    	if( ($id == 23) || ($user_current_login != 23 && (($data_delete['role'] == 2) || ($data_delete['role'] == 1  && $data_delete['id']!= 23)))){
+    	if( ($id == 1) || ($user_current_login != 1 && (($data_delete['role'] == 2) || ($data_delete['role'] == 1  && $data_delete['id']!= 1)))){
             return redirect() -> route('showuser')->with(['flash_level' => 'danger','flash_message' => 'Bạn không thể xóa được tài khoản này']);
     	}else{
             User::destroy($id);

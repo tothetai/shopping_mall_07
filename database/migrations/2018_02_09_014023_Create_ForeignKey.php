@@ -35,9 +35,6 @@ class CreateForeignKey extends Migration
          Schema::table('size', function ($table) {
             $table->foreign('product_id')->references('id')->on('products');
         });
-        Schema::table('bill', function ($table) {
-            $table->foreign('user_id_bill')->references('id')->on('user_table');
-        });
     }
 
     /**
@@ -55,6 +52,5 @@ class CreateForeignKey extends Migration
         $table->dropForeign('comments_prod_id_foreign');
         $table->dropForeign('comments_user_id_comment_foreign');
         $table->dropForeign('size_id_pro_foreign');
-        $table->dropForeign('bill_user_id_bill_foreign');
     }
 }

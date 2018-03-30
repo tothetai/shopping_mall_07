@@ -49,7 +49,15 @@ class FrontController extends Controller
             'avatar' => "",
         ]);
 
-        return view('pages.login')->with('message','Đăng ký tài khoản thành công!');
+        return view('pages.login');
+    }
+
+     public function getcontact(){
+        return view ('pages.contact');
+    }
+     
+    public function getintroduct(){
+        return view ('pages.introduct');
     }
 
     public function getlogin(){
@@ -60,12 +68,11 @@ class FrontController extends Controller
 
         $login = [
             'email' => $request->email,
-            'password' => $request->password
+            'password' => $request->password,
+            'role' => '0'
         ];
         if(Auth::attempt($login)){
-            Cart::destroy();
             return redirect('homepage');
-
         }
         else
         {
@@ -92,8 +99,8 @@ class FrontController extends Controller
         $product = Product::where('id', $req->id)->first();
         $pros =  Product::new()->get();
         $prodis = Product::product()->get();
-
-        return view('pages.productDetail', compact('product', 'pros', 'prodis','comment'));
+        $sp_tuongtu = Product::where('sub_id', $product->sub_id)->skip(1)->take(5)->get();
+        return view('pages.productDetail', compact('product', 'pros', 'prodis','comment','sp_tuongtu'));
     }
 
     public function seach(Request $request){

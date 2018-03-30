@@ -11,18 +11,26 @@ class Bill extends Migration
      *
      * @return void
      */
+
     public function up()
     {
         Schema::create('bill', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id_bill')->unsigned();
-            $table->float('total');
-            $table->string('payment');
-            $table->text('message');
+            $table->string('name');
+            $table->string('email');
+            $table->text('phone');
+            $table->string('address');
+            $table->date('purchase_date');
             $table->timestamps();
         });
     }
-
+    protected $fillable = [
+        'name',
+        'email',
+        'phone', 
+        'address', 
+        'purchase_date',
+    ];
     /**
      * Reverse the migrations.
      *
