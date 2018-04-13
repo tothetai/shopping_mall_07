@@ -15,46 +15,15 @@ use App\Models\Product;
 
 class cartController extends Controller
 {
-   /* public  function CartProduct(){
-        $cart = Cart::content();
-        $cartProduct = [];
-        if(Auth::id()){
-            foreach($cart as $cartItem){
-                foreach($cartItem as $objectItem){
-                    if($objectItem->custom_user == Auth::id()){
-                        $cartProduct[$cartItem->id] = $cartItem;
-                    }
-
-                }
-            }
-        }
-        else{
-            foreach($cart as $cartItem){
-                foreach($cartItem as $objectItem){
-                    if(!isset($objectItem->custom_user) || ($objectItem->custom_user) == ""){
-                       $cartProduct[$cartItem->id] = $cartItem;
-                    }
-                }
-            }
-        }
-        return $cartProduct;
-    }*/
 
     public function index(){
-       /* $cart =cartController::CartProduct();*/
        $cart= Cart::content();
        return view('pages.cart',['data' => $cart]);
    }
    public function addItem(Request $request)
    {
-    $pro = Product::find($request->productId);
 
-    if(Auth::id()){
-        $user_id = Auth::id();
-    }
-    else{
-        $user_id = " ";
-    }
+    $pro = Product::find($request->productId);
 
     Cart::add([ 
         'id' => $pro->id, 
@@ -99,6 +68,7 @@ public function postcheckout(Request $req){
         'address' => $req->address,
         'purchase_date' => Carbon::now(),
     ]);
+    
     $billId = $bill->id;
 
     $cart= Cart::content();

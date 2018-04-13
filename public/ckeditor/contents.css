@@ -1,5 +1,9 @@
 /*
+<<<<<<< HEAD
 Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
+=======
+Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 For licensing, see LICENSE.md or http://ckeditor.com/license
 */
 
@@ -22,9 +26,12 @@ body
 {
 	font-size: 13px;
 	line-height: 1.6;
+<<<<<<< HEAD
 
 	/* Fix for missing scrollbars with RTL texts. (#10488) */
 	word-wrap: break-word;
+=======
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 }
 
 blockquote
@@ -96,8 +103,11 @@ pre
 {
 	white-space: pre-wrap; /* CSS 2.1 */
 	word-wrap: break-word; /* IE7 */
+<<<<<<< HEAD
 	-moz-tab-size: 4;
 	tab-size: 4;
+=======
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 }
 
 .marker
@@ -107,7 +117,11 @@ pre
 
 span[lang]
 {
+<<<<<<< HEAD
 	font-style: italic;
+=======
+   font-style: italic;
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 }
 
 figure
@@ -130,6 +144,7 @@ figure > figcaption
 a > img {
 	padding: 1px;
 	margin: 1px;
+<<<<<<< HEAD
 	border: none;
 	outline: 1px solid #0782C1;
 }
@@ -206,3 +221,7 @@ a > img {
 	max-height: 1080px;
 	margin:0 auto;
 }
+=======
+	outline: 1px solid #0782C1;
+}
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d

@@ -11,7 +11,7 @@
                     <div class="col-sm-4 col-xs-7">
                         <div class="welcome-msg">{{ Lang::get('index.header.welcome') }}</div>
                     </div>
-                    <div class="social-sharing pull-right">
+                  <!--   <div class="social-sharing pull-right">
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Vietnam
                                 <span class="caret"></span></button>
@@ -20,7 +20,7 @@
                                   <li><a href="{!! route('user.change-language', ['vi']) !!}">Vietnam</a></li>
                               </ul>
                           </div>
-                      </div>
+                      </div> -->
                   </div>
               </div>
           </div>
@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-3 col-xs-12 col-sm-4 ">
                 <div class="logo">
-                    <a href="" class="Lyly FashionShop"><img src="assets/img/LOGO HOAI (2).png" alt=""></a>
+                    <a href="" class="Lyly FashionShop"><img src="assets/img/logo.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-5 col-md-5 col-sm-4 col-xs-12  search hidden-xs">
@@ -75,9 +75,9 @@
                         <li class="level0 parent ">
                             <a href="product"><span>{{ Lang::get('index.homepage.product') }}</span></a>
                         </li>
-                        <li class="level0 level-top parent"> <a class="level-top" href="lienhe"> <span>{{ Lang::get('index.homepage.contact') }}</span> </a> </li>
+                        <li class="level0 level-top parent"> <a class="level-top" href="contact"> <span>{{ Lang::get('index.homepage.contact') }}</span> </a> </li>
                         <li class="level0 parent ">
-                            <a href="chinhsach"><span>{{ Lang::get('index.homepage.introduce') }}</span></a>
+                            <a href="introduct"><span>{{ Lang::get('index.homepage.introduce') }}</span></a>
                         </li>
                         <li class="custom">
                             <span id="cart-menu-li" class="cart-icon"> 

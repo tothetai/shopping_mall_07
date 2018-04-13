@@ -2,7 +2,11 @@ Software License Agreement
 ==========================
 
 CKEditor - The text editor for Internet - http://ckeditor.com
+<<<<<<< HEAD
 Copyright (c) 2003-2017, CKSource - Frederico Knabben. All rights reserved.
+=======
+Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 
 Licensed under the terms of any of the following licenses at your
 choice:
@@ -35,6 +39,7 @@ CKSource engineers and consists of CKSource-owned intellectual
 property. In some specific instances, CKEditor will incorporate work
 done by developers outside of CKSource with their express permission.
 
+<<<<<<< HEAD
 The following libraries are included in CKEditor under the MIT license (see Appendix D):
 
 * CKSource Samples Framework (included in the samples) - Copyright (c) 2014-2017, CKSource - Frederico Knabben.
@@ -55,6 +60,8 @@ The following libraries are included in CKEditor under the BSD-3 License (see Ap
 * YUI Library (included in the `uicolor` plugin) - Copyright (c) 2009, Yahoo! Inc.
 
 
+=======
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 Trademarks
 ----------
 
@@ -67,7 +74,10 @@ marks of their respective holders.
 Appendix A: The GPL License
 ---------------------------
 
+<<<<<<< HEAD
 ```
+=======
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 GNU GENERAL PUBLIC LICENSE
 Version 2, June 1991
 
@@ -348,12 +358,19 @@ PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGES.
 
 END OF TERMS AND CONDITIONS
+<<<<<<< HEAD
 ```
+=======
+
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 
 Appendix B: The LGPL License
 ----------------------------
 
+<<<<<<< HEAD
 ```
+=======
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 GNU LESSER GENERAL PUBLIC LICENSE
 Version 2.1, February 1999
 
@@ -812,12 +829,19 @@ SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGES.
 
 END OF TERMS AND CONDITIONS
+<<<<<<< HEAD
 ```
+=======
+
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 
 Appendix C: The MPL License
 ---------------------------
 
+<<<<<<< HEAD
 ```
+=======
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d
 MOZILLA PUBLIC LICENSE
 Version 1.1
 
@@ -1285,6 +1309,7 @@ EXHIBIT A -Mozilla Public License.
      the notices in the Source Code files of the Original Code. You should
      use the text of this Exhibit A rather than the text found in the
      Original Code Source Code for Your Modifications.]
+<<<<<<< HEAD
 ```
 
 Appendix D: The MIT License
@@ -1418,3 +1443,5 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ```
 
+=======
+>>>>>>> 4dd5d9fb3a74824a17e4415bb5694f61eff6c63d

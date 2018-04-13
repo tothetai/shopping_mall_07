@@ -17,7 +17,7 @@
         ],
 
         'header' => [
-            'welcome' => 'Chào mừng bạn đến với  TITIKAKASHOP',
+            'welcome' => 'Chào mừng bạn đến với LyLyFashion',
             'copyright' => 'Bản quyền thuộc về Ambition',
         ],
 

@@ -9,7 +9,8 @@ use App\Models\User;
 
 class Comment extends Model
 {
-   protected $table = 'comments';
+  
+    protected $table = 'comments';
 
     protected $fillable = [
         'prod_id',

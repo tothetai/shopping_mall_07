@@ -61,6 +61,6 @@ class SubCategoryController extends Controller
             echo '"
                 </script>';
         }
+    }    
        
-    }
 }

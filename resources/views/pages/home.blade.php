@@ -55,7 +55,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" data-product-id="{{$pron->id}}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('productDetail', $pron->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('productDetail', $pron->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -88,7 +88,7 @@
                                     </div>
                                     <div class="single-item-caption">
                                         <a class="add-to-cart pull-left" data-product-id="{{$prodis->id}}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('productDetail', $prodis->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+                                        <a class="beta-btn primary" href="{{route('productDetail', $prodis->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -97,44 +97,6 @@
                         </div>
                     </div>
                 </section >
-                <div class="imgadvertise">  <!-- Ảnh quảng cáo -->
-                    <img src="assets/img/article_ads_banner_1.jpg">
-                </div>
-                <section class="article foot">
-                    <div class="title">     <!-- sản phẩm nổi bật -->
-                        {{ Lang::get('index.homepage.mostbuyproduct') }}
-                    </div>
-                    <div class="item">
-                        <div class="row noboder">
-                            @foreach($pros as $proi)
-                            <div class="col-sm-3">
-                                <div class="single-item">
-                                    <div class="single-item-header">
-                                        <a href="{{route('productDetail', $proi->id)}}"><img src="{{ url('assets/uploads').'/'.$proi->img }}" alt=""></a>
-                                    </div>
-                                    <div class="single-item-body">
-                                        <p class="single-item-title">{{ $proi->name }}</p>
-                                        <p class="single-item-price">
-                                            @if($proi->discount==0)
-                                            <span class="flash-sale">${{ $proi->price }}</span>
-
-                                            @else
-                                            <span class="flash-del">${{ $proi->price }}</span>
-                                            <span class="flash-sale">${{ $proi->discount }}</span>
-                                            @endif
-                                        </p>
-                                    </div>
-                                    <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" data-product-id="{{ $proi->id }}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{route('productDetail', $proi->id)}}">Details <i class="fa fa-chevron-right"></i></a>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach 
-                        </div>
-                    </div>
-                </section>
             </div>
         </div>  
     </div>

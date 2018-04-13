@@ -52,7 +52,7 @@
             </section>
             <section class="footer-bot">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 f-low-1">
-                    <h5>TITIKAKASHOP</h5>
+                    <h5>LyLyFashion</h5>
                     <p>{{ Lang::get('index.homepage.address') }}</p>
                     <p>{{ Lang::get('index.homepage.phone') }}</p>
                 </div>

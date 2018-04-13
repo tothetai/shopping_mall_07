@@ -35,7 +35,7 @@ class ProductController extends Controller
             'featured' => $request->featured,
             'new' => $request->new,
             'sub_id' => $request->subcate,
-        ]);
+            ]);
         //$product = new Product;
         // $product->name = $request->name;
         // $product->pro_slug =str_slug($request->name);

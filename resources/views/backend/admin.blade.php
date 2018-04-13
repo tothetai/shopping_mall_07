@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 <style>
 #navbar{
 	margin-top:50px;}
@@ -53,9 +53,9 @@
                     <td>{{$user -> name}}</td>
                     <td>{{$user -> email}}</td>
                     <td>
-                        @if($user -> role ==1  && $user -> id == 23 )<b style="color:red">Admin</b>@endif
-                        @if(($user -> role == 2) || ($user -> role == 1  && $user -> id != 23))<b style="color:blue">Mod</b>@endif
-                        @if($user -> role >2 )<b style="color:back"><b>User</b>@endif
+                        @if($user -> role ==1  && $user -> id == 1 )<b style="color:red">Admin</b>@endif
+                        @if(($user -> role == 2) || ($user -> role == 1  && $user -> id != 1))<b style="color:blue">Mod</b>@endif
+                        @if($user -> role >2 || $user -> role == 0)<b style="color:back"><b>User</b>@endif
                     </td>
                     <td><a href="{{asset('admin/user/edit/'.$user -> id)}}">Edit</a></td>
                     <td><a href="{{asset('admin/user/delete/'.$user -> id)}}" onclick="return confirm('Bạn có chắc chắn muốn xóa?')">Delete</a></td>

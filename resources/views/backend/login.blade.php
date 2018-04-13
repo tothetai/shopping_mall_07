@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Login</title>
 <base href="{{asset('/')}}/">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/datepicker3.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
+
+{!! Html::style('css/bootstrap.min.css') !!}
+{!! Html::style('css/datepicker3.css') !!}
+{!! Html::style('css/styles.css') !!}
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <script src="js/respond.min.js"></script>
